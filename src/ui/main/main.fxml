@@ -1,0 +1,69 @@
+<?import javafx.scene.control.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import java.lang.String?>
+<BorderPane fx:controller="ui.main.MainController"
+            xmlns:fx="http://javafx.com/fxml" stylesheets="/ui/main/main.css">
+
+    <center>
+
+        <GridPane id="inner">
+            <padding>
+                <Insets bottom="5" left="5" right ="5" top="5"/>
+            </padding>
+            <TextArea text="Sample Text Lenny Face ( ͡° ͜ʖ ͡°) " fx:id="textarea" id="main_textarea" editable="false"/>
+
+            <VBox GridPane.columnIndex="1" spacing="5">
+
+                <StackPane>
+                    <Label text="User List"/>
+                </StackPane>
+                <ListView fx:id="userlist" VBox.vgrow="ALWAYS">
+                    <items>
+                        <FXCollections fx:id="listContents" fx:factory="observableArrayList">
+                            <String fx:value="One"/>
+                            <String fx:value="Two"/>
+                            <String fx:value="Three"/>
+                            <String fx:value="Four"/>
+                            <String fx:value="Five"/>
+                        </FXCollections>
+                    </items>
+                </ListView>
+            </VBox>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="70" />
+                <ColumnConstraints hgrow="SOMETIMES" percentWidth="30" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="SOMETIMES" prefHeight="100" />
+            </rowConstraints>
+        </GridPane>
+    </center>
+
+    <bottom>
+
+        <VBox spacing="10" id="bottom_box">
+            <padding>
+                <Insets bottom="10.0" left="0" right ="0" top="0.0"/>
+            </padding>
+            <TextField fx:id="input" promptText="Enter Message..."/>
+
+            <HBox>
+                <padding>
+                    <Insets bottom="0" left="10" right ="10" top="0"/>
+                </padding>
+
+                <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+
+                    <Button text="Logout" onAction="#logout" />
+                </HBox>
+
+                <HBox alignment="CENTER_RIGHT" spacing="5">
+                    <Button text="Attach Image" onAction="#attachImage"/>
+                    <Button text="Send" defaultButton="true" onAction="#send"/>
+                </HBox>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>

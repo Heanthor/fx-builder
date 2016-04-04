@@ -1,0 +1,17 @@
+.root {
+    -fx-background-color: lightgray;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+#main_textarea .content {
+    -fx-background-color: #999999;
+}
+
+#bottom_box {
+    -fx-background-color: #ADADAD;
+}
+
+.list-view {
+    -fx-background-color: #ADADAD;
+}
